@@ -1,0 +1,42 @@
+{% extends 'main_page/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<br> <br>
+<div class="container">
+
+
+<div class="row row-cols-1 row-cols-md-3">
+
+   {% for video in object_list %}
+
+    <h1> hello </h1>
+  <div class="col mb-4">
+    <div class="card" style="width: 20rem;" >
+<center>
+    <video width="900" height="400" controls>
+    <source src="{{ video.video.url }}">
+    </video>
+    </center>
+        <br>
+        <br>
+        <br>
+<!--      <img src="{{ Electronic.photo.url }}" class="card-img-top" alt="...">-->
+      <div class="card-body">
+        <h5 class="card-title">{{ video.name_lesson}}</h5>
+        <p class="card-text">{{ video.description}}</p>
+<!--        <p class="card-text"> <mark style="background-color: green; color: white;">{{ Electronic.price}} L.E </mark> </p>-->
+      </div>
+    </div>
+  </div>
+
+
+
+    {% endfor %}
+     <p>No video Available</p>
+
+  </div>
+  </div>
+
+{% endblock  %}
